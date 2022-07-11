@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-//@Data
 @Service
-//@Builder
 public class ManagerService {
     @Autowired
     private StaffRepository staffRepository;
@@ -37,7 +35,10 @@ public class ManagerService {
         Optional<Staff> staff = staffRepository.findById(staffId);
         Optional<ParkingLot> parkingLot = parkingLotRepository.findById(parkingLotId);
         if (staff.isPresent() && parkingLot.isPresent()) {
-            staff.get().getParkingLots().add(parkingLot.get());
+            Staff staff1 = staff.get();
+            ParkingLot parkingLot1 = parkingLot.get();
+            staff1.addParkingLot(parkingLot1);
+            staffRepository.saveAndFlush(staff1);
         }
 
     }

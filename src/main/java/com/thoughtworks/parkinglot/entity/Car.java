@@ -1,12 +1,15 @@
 package com.thoughtworks.parkinglot.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "car")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Car {
     @Id
     @Column(name = "id", nullable = false)

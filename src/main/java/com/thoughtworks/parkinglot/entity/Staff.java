@@ -4,9 +4,12 @@ package com.thoughtworks.parkinglot.entity;
 import javax.persistence.*;
 import java.util.List;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "staff")
 public class Staff {
     @Id
@@ -35,5 +38,9 @@ public class Staff {
 
     public void setParkingLots(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
+    }
+
+    public void addParkingLot(ParkingLot parkingLot) {
+        this.parkingLots.add(parkingLot);
     }
 }

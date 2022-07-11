@@ -25,7 +25,4 @@ public class StaffController {
         staffService.addCarToParkingLot(carRequest.getPlateNum(), parkingLotId);
     }
 
-
-
-
 }

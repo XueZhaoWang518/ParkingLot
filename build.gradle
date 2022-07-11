@@ -10,9 +10,9 @@ buildscript {
 	}
 
 	dependencies {
-		classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
+//		classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
 		classpath "org.springframework.boot:spring-boot-gradle-plugin:${project.bootVersion}"
-		classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.0.1.RELEASE"
+//		classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.0.1.RELEASE"
 		classpath "org.flywaydb:flyway-gradle-plugin:5.0.7"
 
 	}
@@ -37,8 +37,6 @@ repositories {
 
 sourceCompatibility = 1.8
 
-
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -54,19 +52,20 @@ dependencies {
 	implementation 'org.flywaydb:flyway-core'
 	implementation 'org.flywaydb:flyway-core:5.0.7'
 	implementation 'commons-io:commons-io:2.5'
-	implementation 'org.projectlombok:lombok:1.18.0'
-//    implementation 'au.com.dius.pact.provider:spring:4.3.9'
-//	implementation 'au.com.dius:pact-jvm-provider-spring_2.12:3.6.15'
-//	implementation 'au.com.dius:pact-jvm-provider-spring:4.0.10'
-//	implementation 'au.com.dius:pact-jvm-provider-spring_2.11:3.5.24'
-//	implementation 'au.com.dius:pact-jvm-provider-junit5-spring:4.0.10'
-//	implementation 'au.com.dius.pact.provider:junit5spring:4.3.9'
-
-	testImplementation 'org.projectlombok:lombok:1.18.0'
+	compileOnly 'org.projectlombok:lombok:1.18.0'
+//	annotationProcessor 'org.projectlombok:lombok:1.18.0'
+//	testImplementation 'org.projectlombok:lombok:1.18.0'
 	testImplementation 'org.codehaus.groovy:groovy-all:2.4.6'
 	testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
 	testImplementation 'org.spockframework:spock-spring:1.0-groovy-2.4'
 	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+
+
+	compileOnly 'org.projectlombok:lombok:1.18.0'
+	annotationProcessor 'org.projectlombok:lombok:1.18.0'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.0'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.0'
 }
 
 dependencyManagement {

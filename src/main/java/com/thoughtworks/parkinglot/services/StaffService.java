@@ -31,7 +31,9 @@ public class StaffService {
         List<Car> carList = carRepository.findAll();
         Car car = carList.stream().filter(a -> a.getPlateNum().equals(plateNum)).collect(Collectors.toList()).get(0);
         if (parkingLot.isPresent()) {
-            parkingLot.get().getCars().add(car);
+            ParkingLot parkingLot1 = parkingLot.get();
+            parkingLot1.getCars().add(car);
+            parkingLotRepository.saveAndFlush(parkingLot1);
         }
 
     }
