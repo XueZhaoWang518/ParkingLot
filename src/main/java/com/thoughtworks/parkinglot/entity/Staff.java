@@ -24,22 +24,6 @@ public class Staff {
     @JoinColumn(name="staff_id")
     private List<ParkingLot> parkingLots;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<ParkingLot> getParkingLots() {
-        return parkingLots;
-    }
-
-    public void setParkingLots(List<ParkingLot> parkingLots) {
-        this.parkingLots = parkingLots;
-    }
-
     public void addParkingLot(ParkingLot parkingLot) {
         this.parkingLots.add(parkingLot);
     }

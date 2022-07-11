@@ -22,27 +22,4 @@ public class Car {
     @Column(name = "plate_number", nullable = false)
     private String plateNum;
 
-    public String getPlateNum() {
-        return plateNum;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setPlateNum(String plateNum) {
-        this.plateNum = plateNum;
-    }
 }
